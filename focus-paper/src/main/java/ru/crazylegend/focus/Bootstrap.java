@@ -2,6 +2,7 @@ package ru.crazylegend.focus;
 
 import com.j256.ormlite.logger.*;
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.crazylegend.focus.api.service.FocusApi;
 import ru.crazylegend.focus.configuration.Configuration;
 import ru.crazylegend.focus.configuration.Messages;
 
@@ -11,6 +12,9 @@ import java.lang.reflect.Field;
 
 @SuppressWarnings("unused")
 public class Bootstrap extends JavaPlugin {
+
+    private FocusApi focusApi;
+
     static {
         // Fix ORMLite 'Unable to get new instance of class' warnings in the MC console
         // TODO try to find more pretty fix solution in the future releases
@@ -26,6 +30,8 @@ public class Bootstrap extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        focusApi = FocusApi.bootstrapWith(this);
+
         // Allowing only ORMLite errors logging
         LoggerFactory.setLogBackendFactory(JavaUtilLogBackend::new);
         LoggerFactory.setLogBackendType(LogBackendType.JAVA_UTIL);
@@ -41,6 +47,13 @@ public class Bootstrap extends JavaPlugin {
         messages.refresh();
 
         new CommandInfo(this, messages);
+    }
+
+    @Override
+    public void onDisable() {
+        if (focusApi != null && !focusApi.isCancelled()) {
+            focusApi.cancel();
+        }
     }
 
     public void setORMLiteLogLevel(Level level) {
