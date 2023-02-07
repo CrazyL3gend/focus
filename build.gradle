@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.crazylegend'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
