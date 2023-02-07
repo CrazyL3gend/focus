@@ -1,0 +1,13 @@
+name: focus
+main: ru.crazylegend.focus.Bootstrap
+author: CrazyLegend_
+version: 1.0
+load: STARTUP
+
+commands:
+  focus:
+    description: Display plugin information
+
+permissions:
+  focus.command.info:
+    default: true

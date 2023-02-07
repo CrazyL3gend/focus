@@ -1,4 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'spigot-repo'
+            url = 'https://repo.papermc.io/repository/maven-public/'
+        }
+        maven {
+            name = 'crazy-repo'
+            url = 'https://repo.crazylegend.space/public'
+        }
+    }
+    repositoriesMode.set RepositoriesMode.FAIL_ON_PROJECT_REPOS
+}
 
 
 rootProject.name = 'focus'
+include 'focus-paper'
 

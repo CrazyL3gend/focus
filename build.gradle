@@ -1,14 +1,27 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'maven-publish'
 }
 
-group 'ru.crazylegend'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+shadowJar {
+    archiveFileName.set('focus.jar')
 }
 
-dependencies {
+allprojects {
 
+    group 'ru.crazylegend.focus'
+    version '1.0'
+    sourceCompatibility = '17'
+
+    compileJava.options.encoding = 'UTF-8'
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.github.johnrengelman.shadow'
 }

@@ -1,0 +1,21 @@
+dependencies {
+    // paper 1.12.2
+    compileOnly 'com.destroystokyo.paper:paper-api:1.12.2-R0.1-SNAPSHOT'
+
+    // OrmLite
+    implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
+
+    // JSoup
+    implementation 'org.jsoup:jsoup:1.14.3'
+
+    // annotations
+    implementation 'org.jetbrains:annotations:23.1.0'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+shadowJar {
+    archiveFileName.set('focus.jar')
+}

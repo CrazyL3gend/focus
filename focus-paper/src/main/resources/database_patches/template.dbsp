@@ -1,0 +1,11 @@
+[Migration]
+name = Migration Template
+description = An example configuration for the Database Migrations API
+version = 1
+order = 1
+target = mysql, sqlite
+source = old_table
+destination = new_table
+
+[Statements]
+SELECT * FROM `table_name`;
