@@ -48,6 +48,7 @@ public class PostgreSQLDatabaseCredentials implements AuthDatabaseCredentials, R
     @CredentialField("params")
     private List<String> parameters;
 
+    @SuppressWarnings("ignored")
     private static File downloadPostgreSQLDriver(Plugin plugin) throws IOException, DriverLoadException {
         File driverFolder = new File(plugin.getDataFolder(), "driver");
         driverFolder.mkdirs();

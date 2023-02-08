@@ -11,6 +11,7 @@ import ru.crazylegend.focus.command.preset.standalone.PermissibleCommand;
 import ru.crazylegend.focus.configuration.Messages;
 import ru.crazylegend.focus.cooldown.preset.LitePlayersCooldownStorage;
 import ru.crazylegend.focus.cooldown.preset.PlayersCooldownStorage;
+import ru.crazylegend.focus.util.color.Color;
 import ru.crazylegend.focus.util.component.injection.TextComponentInjector;
 import ru.crazylegend.focus.util.component.replacement.Replacements;
 import ru.crazylegend.focus.util.component.replacement.TextComponentReplacement;
@@ -56,14 +57,16 @@ public class CommandInfo extends PermissibleCommand {
 
         String pversion = description.getVersion();
 
-        sender.sendMessage(ChatColor.GRAY + "   SoKnight's library information");
-        sender.sendMessage(" Plugin version: " + ChatColor.AQUA + pversion);
-        sender.sendMessage(" Author & Developer: " + ChatColor.AQUA + "SoKnight");
+        sender.sendMessage(ChatColor.GRAY + "   focus library information");
+        sender.sendMessage(" Plugin version: " + Color.AQUA + pversion);
+        sender.sendMessage(" Author + " + Color.AQUA + " CrazyLegend_");
+        sender.sendMessage(" Developer: " + ChatColor.AQUA + "SoKnight");
+        sender.sendMessage(" Developer: " + ChatColor.AQUA + "akamexd");
 
         String text = " Github: " + ChatColor.AQUA + "Click %link% to open";
 
         TextComponentReplacement replacement = Replacements.component("%link%", "[here]")
-                .onClickOpenUrl("https://github.com/SoKnight/SKLibrary")
+                .onClickOpenUrl("https://github.com/CrazyL3gend/focus")
                 .onHover(HoverEvent.Action.SHOW_TEXT,
                         new ComponentBuilder("&aYou will open a link to my github in your browser. &a&lClick!")
                                 .create()

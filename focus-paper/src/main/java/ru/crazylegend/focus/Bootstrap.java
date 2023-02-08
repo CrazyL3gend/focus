@@ -4,6 +4,7 @@ import com.j256.ormlite.logger.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.crazylegend.focus.api.service.FocusApi;
 import ru.crazylegend.focus.configuration.Configuration;
+import ru.crazylegend.focus.configuration.MenuConfiguration;
 import ru.crazylegend.focus.configuration.Messages;
 
 import java.io.OutputStream;
@@ -45,6 +46,11 @@ public class Bootstrap extends JavaPlugin {
 
         Messages messages = new Messages(this, "messages.yml");
         messages.refresh();
+
+        MenuConfiguration menuConfiguration = new MenuConfiguration(this, "menus.yml");
+        menuConfiguration.refresh();
+
+        System.out.println(menuConfiguration.getMenu("donate-menu").getMatrix());
 
         new CommandInfo(this, messages);
     }

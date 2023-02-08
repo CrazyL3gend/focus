@@ -1,0 +1,42 @@
+donate-menu:
+  title: '&0Something'
+  rows: 3
+  inventoryType: CHEST
+  pattern:
+    - 'ioioioioi'
+    - 'o   g   o'
+    - 'roioioiob'
+  items:
+    i:
+      click: NONE
+      item:
+        type: IRON_FENCE
+        durability: 0
+        amount: 1
+        display: '&f '
+        lore:
+          - '&f '
+        flags:
+          - 'HIDE_ATTRIBUTES'
+    o:
+      click: NONE
+      item:
+        type: STAINED_GLASS_PANE
+        durability: 1
+        amount: 1
+        display: '&f '
+        lore:
+          - '&f '
+        flags:
+          - 'HIDE_ATTRIBUTES'
+    g:
+      click: NONE
+      item:
+        type: GOLD_INGOT
+        durability: 0
+        amount: 1
+        display: '&f '
+        lore:
+          - '&f '
+        flags:
+          - 'HIDE_ATTRIBUTES'

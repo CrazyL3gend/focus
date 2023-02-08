@@ -16,6 +16,28 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
-shadowJar {
-    archiveFileName.set('focus.jar')
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'focus'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+            }
+            repositories {
+                maven {
+                    name = 'crazy-repo'
+                    url = 'https://repo.crazylegend.space/public'
+
+                    credentials {
+                        username = 'crazy'
+                        password = 'MIY22YrUd6EdiiaRaJEahI7PgoiF+z/yXlrk00QeqdCV9pc9RqsppZ1s0NwE5syo'
+                    }
+                }
+            }
+        }
+    }
 }
+
